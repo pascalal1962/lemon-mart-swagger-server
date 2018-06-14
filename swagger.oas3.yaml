@@ -59,8 +59,7 @@ components:
       items:
         $ref: '#/components/schemas/User'
   parameters:
-    offsetParam: # <--- Arbitrary name for the definition that will be used to refer to it.
-                 # Not necessarily the same as the parameter name.
+    offsetParam:
       in: query
       name: offset
       required: false
@@ -95,10 +94,10 @@ paths:
         - $ref: '#/components/parameters/offsetParam'
         - $ref: '#/components/parameters/limitParam'
       responses:
-        '200': # Response
+        '200':
           description: OK
-          content: # Response body
-            application/json: # Media type
+          content:
+            application/json:
               schema:
                 $ref: '#/components/schemas/Users'
   /user/{id}:
@@ -112,10 +111,10 @@ paths:
             type: string
           description: User's unique id
       responses:
-        '200': # Responses
+        '200':
           description: OK
-          content: # Response body
-            application/json: # Media type
+          content:
+            application/json:
               schema:
                 $ref: '#/components/schemas/User'
     put:
@@ -137,7 +136,7 @@ paths:
       responses:
         '200':
           description: OK
-          content: # Response body
-            application/json: # Media type
+          content:
+            application/json:
               schema:
                 $ref: '#/components/schemas/User'
